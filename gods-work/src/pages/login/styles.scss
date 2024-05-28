@@ -1,0 +1,88 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 50px 0;
+  background-color: #5882C1;
+}
+
+.title {
+  color: #003465;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 60px 0 20px 0;
+}
+
+.content {
+  width: 60%;
+  align-self: center;
+  padding-left: 100px;
+}
+
+.input-area {
+  list-style-type: none;
+  align-content: center;
+}
+
+
+.input-id , 
+.input-pw {
+  width: 80%;
+  height: 50px;
+  margin: 10px 0;
+  text-indent: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid white;
+}
+
+.input-id::placeholder,
+.input-pw::placeholder {
+  color: #435566;
+}
+
+.find-area {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+  margin: 10px 50px;
+  color: white;
+  gap: 20px;
+  
+  .find-id,
+  .find-pw {
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+.btn-login, 
+.btn-signUp {
+  width: 80%;
+  height: 50px;
+  margin: 5px 0;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 10px;
+  border: 1px solid #003465;
+  background-color: #003465;
+  cursor: pointer;
+}
+
+.btn-login:disabled,
+.btn-signUp:disabled {
+  background-color: #435566;
+  border: 1px solid #435566;
+  color:white;
+}
+
+.errorInputData {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin: 60px 80px 40px 0;
+}
