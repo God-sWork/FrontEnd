@@ -1,31 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
+import ModalFindId from "../../component/ModalFindId";
 
 export default function Login() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-  const [idValid, setIdValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [disabledBtn, setDisabledBtn] = useState(true);
 
+  const [findIdModalOn, setFindIdModalOn] = useState(false);
+
   useEffect(() => {
-    if (idValid && pwValid) {
+    if (id.length > 0 && pwValid) {
       setDisabledBtn(false);
       return;
     }
     setDisabledBtn(true);
-  }, [idValid, pwValid]);
+  }, [id, pwValid]);
 
   const handleChangeId = (e) => {
     setId(e.target.value);
-    const regex =
-      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-
-    if (regex.test(e.target.value)) {
-      setIdValid(true);
-    } else {
-      setIdValid(false);
-    }
   };
 
   const handleChangePw = (e) => {
@@ -40,7 +34,7 @@ export default function Login() {
   };
 
   const handleFindId = () => {
-    alert("아이디 찾기");
+    setFindIdModalOn(true);
   };
   const handleFindPw = () => {
     alert("비번 찾기");
@@ -65,8 +59,8 @@ export default function Login() {
             <input
               className="input-id"
               type={"text"}
-              alt="이메일을 입력해주세요"
-              placeholder="이메일을 입력해주세요"
+              alt="아이디를 입력해주세요"
+              placeholder="아이디를 입력해주세요"
               value={id}
               onChange={handleChangeId}
             />
@@ -110,9 +104,7 @@ export default function Login() {
           </button>
         </div>
         <div className="errorInputData">
-          {!idValid && id.length > 0 && (
-            <div>아이디는 이메일 형식으로 입력해주세요</div>
-          )}
+          {id.length === 0 && <div>아이디를 입력해주세요</div>}
         </div>
         <div className="errorInputData">
           {!pwValid && password.length > 0 && (
@@ -120,6 +112,10 @@ export default function Login() {
           )}
         </div>
       </div>
+      <ModalFindId
+        show={findIdModalOn}
+        onHide={() => setFindIdModalOn(false)}
+      />
     </div>
   );
 }

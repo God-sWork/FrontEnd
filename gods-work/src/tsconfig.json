@@ -1,26 +1,30 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "outDir": "./dist",
+    "noImplicitAny": true,
+    "module": "ES6",
+    "target": "ES5",
+    "allowJs": true,
+    "sourceMap": true,
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    // "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "typeRoots": ["./node_modules/@types", "./src"],
     "paths": {
-      "@src/*": ["*"],
+      "@src/*": ["src/*"],
       "@comp/*": ["components/*"],
       "@common/*": ["components/common/*"],
       "@static/*": ["static/*"],
@@ -29,8 +33,7 @@
   },
   "include": [
     "global.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
+    "src/**/*",
   ],
   "exclude": [
     "node_modules"

@@ -18,7 +18,7 @@
         "name": "typescript-plugin-css-modules"
       }
     ],
-    "baseUrl": ".",
+    "baseUrl": "./",
     "allowJs": true,
     "checkJs": true,
     "skipLibCheck": true,
@@ -35,7 +35,8 @@
   "include": [
     "global.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "src/**/*",
   ],
   "exclude": [
     "node_modules"

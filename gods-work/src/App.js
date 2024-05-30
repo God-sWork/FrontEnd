@@ -1,9 +1,11 @@
+import { Route, Routes } from 'react-router-dom';
 import Login from "./pages/login/index.tsx";
 
-
-function App() {
+const App = () => {
   return (
-    <Login />
+    <Routes>
+      <Route path ="/" element ={<Login />} /> 
+    </Routes>
   );
 }
 
